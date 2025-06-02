@@ -21,6 +21,62 @@
         overflow: hidden;
       }
 
+      /* Mobile responsive styles */
+      @media (max-width: 767px) {
+        body {
+          overflow-y: auto;
+          min-height: 100vh;
+        }
+
+        .profile-container {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: none;
+          width: 100%;
+          padding: 1rem;
+          margin: 1rem 0;
+          max-width: none;
+        }
+
+        .glass-card {
+          margin-bottom: 1rem;
+          padding: 1rem !important;
+          border-radius: 16px;
+        }
+
+        .glass-card-small {
+          border-radius: 12px;
+        }
+
+        h1.text-2xl {
+          font-size: 1.75rem;
+          line-height: 1.2;
+          margin-bottom: 0.5rem;
+        }
+
+        .typing::after {
+          font-size: 1rem;
+        }
+
+        .text-gray-400.leading-relaxed {
+          font-size: 0.875rem;
+        }
+
+        .gradient-orb {
+          opacity: 0.4;
+        }
+
+        .skill-tag {
+          margin-bottom: 0.5rem;
+          font-size: 0.75rem;
+        }
+
+        .particles {
+          display: none;
+        }
+      }
+
       .gradient-orb {
         position: absolute;
         border-radius: 50%;
@@ -184,7 +240,6 @@
           opacity: 0;
         }
       }
-
       .social-icon {
         transition: all 0.3s ease;
       }
@@ -192,6 +247,14 @@
       .social-icon:hover {
         transform: translateY(-5px) scale(1.1);
         filter: brightness(1.2);
+      }
+
+      .social-icon i {
+        transition: transform 0.3s ease;
+      }
+
+      .social-icon:hover i {
+        transform: scale(1.2);
       }
 
       .info-card {
@@ -228,19 +291,19 @@
         <!-- Left Column - Main Profile -->
         <div class="lg:col-span-2 space-y-6">
           <!-- Main Profile Card -->
-          <div class="glass-card p-8 info-card">
+          <div class="glass-card p-4 sm:p-8 info-card">
             <div
               class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8"
             >
               <!-- Avatar -->
               <div class="flex-shrink-0">
                 <div
-                  class="w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1 avatar-glow"
+                  class="w-24 sm:w-32 h-24 sm:h-32 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1 avatar-glow"
                 >
                   <!-- Replace the span containing the image with this: -->
                   <div class="w-full h-full rounded-full overflow-hidden">
                     <img
-                      src="486621079_2749402595257616_468724766500359482_n.jpg"
+                      src="avatar.jpg"
                       alt="Profile Avatar"
                       class="w-full h-full object-cover"
                     />
@@ -251,26 +314,34 @@
               <!-- Profile Info -->
               <div class="flex-1 text-center md:text-left">
                 <h1
-                  class="text-2xl md:text-5xl font-light text-white glow-text mb-2"
+                  class="text-2xl md:text-4xl lg:text-5xl font-light text-white glow-text mb-2"
                 >
                   Nguyễn Trần Gia Sĩ
                 </h1>
-                <p class="text-xl text-gray-300 mb-4 typing" id="typing-text">
+                <p
+                  class="text-lg md:text-xl text-gray-300 mb-2 sm:mb-4 typing"
+                  id="typing-text"
+                >
                   Back-end Stack Developer
                 </p>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                  Developer với 1 năm kinh nghiệm trong việc xây
-                  dựng các ứng dụng web hiện đại. Chuyên về React, Java Spring Boot và
-                  các công nghệ cloud.
+                <p
+                  class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 sm:mb-6"
+                >
+                  Developer với 1 năm kinh nghiệm trong việc xây dựng các ứng
+                  dụng web hiện đại. Chuyên về React, Java Spring Boot và các
+                  công nghệ cloud.
                 </p>
 
                 <!-- Contact Info -->
                 <div
-                  class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-300"
+                  class="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4 text-xs sm:text-sm text-gray-300"
                 >
                   <div class="flex items-center space-x-2">
                     <i class="fas fa-envelope text-blue-400"></i>
-                    <span>giasinguyentran@gmail.com</span>
+                    <span class="hidden sm:inline"
+                      >giasinguyentran@gmail.com</span
+                    >
+                    <span class="sm:hidden">Email</span>
                   </div>
                   <div class="flex items-center space-x-2">
                     <i class="fas fa-phone text-green-400"></i>
@@ -284,14 +355,18 @@
               </div>
             </div>
           </div>
-
           <!-- Skills & Technologies -->
-          <div class="glass-card p-6 info-card" style="animation-delay: 0.2s">
-            <h3 class="text-xl font-semibold text-white mb-4 flex items-center">
-              <i class="fas fa-code text-blue-400 mr-3"></i>
+          <div
+            class="glass-card p-4 sm:p-6 info-card"
+            style="animation-delay: 0.2s"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4 flex items-center"
+            >
+              <i class="fas fa-code text-blue-400 mr-2 sm:mr-3"></i>
               Công nghệ & Kỹ năng
             </h3>
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-wrap gap-2 sm:gap-3">
               <span
                 class="skill-tag px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm"
                 >React</span
@@ -373,62 +448,67 @@
               <div class="text-xs text-gray-400">Hài lòng</div>
             </div>
           </div>
-
           <!-- Social Links -->
-          <div class="glass-card p-6 info-card" style="animation-delay: 1.2s">
-            <h3 class="text-lg font-semibold text-white mb-4">Kết nối</h3>
-            <div class="grid grid-cols-2 gap-4">
+          <div
+            class="glass-card p-4 sm:p-6 info-card"
+            style="animation-delay: 1.2s"
+          >
+            <h3 class="text-lg font-semibold text-white mb-3 sm:mb-4">
+              Kết nối
+            </h3>
+            <div class="grid grid-cols-4 sm:grid-cols-2 gap-3 sm:gap-4">
               <a
-                href="#"
-                class="social-icon flex items-center justify-center p-3 bg-blue-600/20 border border-blue-500/30 rounded-lg hover:bg-blue-600/30"
+                href="http://linkedin.com/in/giasinguyen"
+                class="social-icon flex items-center justify-center p-2 sm:p-3 bg-blue-600/20 border border-blue-500/30 rounded-lg hover:bg-blue-600/30 hover:scale-105 transition duration-300"
               >
-                <i class="fab fa-linkedin text-blue-400 text-xl"></i>
+                <i class="fab fa-linkedin text-blue-400 text-lg sm:text-xl"></i>
               </a>
               <a
-                href="#"
-                class="social-icon flex items-center justify-center p-3 bg-gray-600/20 border border-gray-500/30 rounded-lg hover:bg-gray-600/30"
+                href="https://github.com/giasinguyen"
+                class="social-icon flex items-center justify-center p-2 sm:p-3 bg-gray-600/20 border border-gray-500/30 rounded-lg hover:bg-gray-600/30 hover:scale-105 transition duration-300"
               >
-                <i class="fab fa-github text-gray-400 text-xl"></i>
+                <i class="fab fa-github text-gray-400 text-lg sm:text-xl"></i>
               </a>
               <a
-                href="#"
-                class="social-icon flex items-center justify-center p-3 bg-blue-500/20 border border-blue-400/30 rounded-lg hover:bg-blue-500/30"
+                href="https://www.facebook.com/USER.NTGS"
+                class="social-icon flex items-center justify-center p-2 sm:p-3 bg-blue-500/20 border border-blue-400/30 rounded-lg hover:bg-blue-500/30 hover:scale-105 transition duration-300"
               >
-                <i class="fab fa-twitter text-blue-300 text-xl"></i>
+                <i class="fab fa-facebook text-blue-300 text-lg sm:text-xl"></i>
               </a>
               <a
-                href="#"
-                class="social-icon flex items-center justify-center p-3 bg-red-600/20 border border-red-500/30 rounded-lg hover:bg-red-600/30"
+                href="https://www.youtube.com/@iamgiasi"
+                class="social-icon flex items-center justify-center p-2 sm:p-3 bg-red-600/20 border border-red-500/30 rounded-lg hover:bg-red-600/30 hover:scale-105 transition duration-300"
               >
-                <i class="fab fa-youtube text-red-400 text-xl"></i>
+                <i class="fab fa-youtube text-red-400 text-lg sm:text-xl"></i>
               </a>
             </div>
           </div>
-
           <!-- Status -->
           <div
-            class="glass-card-small p-4 info-card"
+            class="glass-card-small p-3 sm:p-4 info-card"
             style="animation-delay: 1.4s"
           >
             <div class="flex items-center justify-between">
-              <span class="text-gray-300 text-sm">Trạng thái</span>
-              <div class="flex items-center space-x-2">
+              <span class="text-gray-300 text-xs sm:text-sm">Trạng thái</span>
+              <div class="flex items-center space-x-1 sm:space-x-2">
                 <div
-                  class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                  class="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-glow"
+                  style="box-shadow: 0 0 10px rgba(74, 222, 128, 0.5)"
                 ></div>
-                <span class="text-green-400 text-sm">Sẵn sàng làm việc</span>
+                <span class="text-green-400 text-xs sm:text-sm"
+                  >Sẵn sàng làm việc</span
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <!-- Bottom Quote -->
       <div
-        class="glass-card p-6 mt-6 text-center info-card"
+        class="glass-card p-4 sm:p-6 mt-4 sm:mt-6 text-center info-card"
         style="animation-delay: 1.6s"
       >
-        <p class="text-gray-300 italic">
+        <p class="text-xs sm:text-sm text-gray-300 italic">
           "Code is like humor. When you have to explain it, it's bad." - Cory
           House
         </p>
@@ -467,13 +547,16 @@
         }
 
         setTimeout(typeWriter, isDeleting ? 50 : 100);
-      }
-
-      // Create particles
+      } // Create particles
       function createParticles() {
         const particlesContainer = document.getElementById("particles");
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 30 : 80; // Giảm số lượng hạt trên mobile
 
-        for (let i = 0; i < 80; i++) {
+        // Xóa hạt hiện tại nếu có
+        particlesContainer.innerHTML = "";
+
+        for (let i = 0; i < particleCount; i++) {
           const particle = document.createElement("div");
           particle.className = "particle";
           particle.style.left = Math.random() * 100 + "%";
@@ -498,13 +581,25 @@
           const y = (mouseY - 0.5) * speed * 100;
           orb.style.transform = `translate(${x}px, ${y}px)`;
         });
-      });
-
-      // Initialize
+      }); // Initialize
       window.addEventListener("load", () => {
         typeWriter();
         createParticles();
       });
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        createParticles();
+      });
+
+      // Allow touch scrolling on mobile
+      document.addEventListener(
+        "touchmove",
+        (e) => {
+          e.stopPropagation();
+        },
+        { passive: true }
+      );
 
       // Disable context menu for cleaner screenshot
       document.addEventListener("contextmenu", (e) => e.preventDefault());
